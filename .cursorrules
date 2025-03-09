@@ -1,0 +1,48 @@
+{
+  "ignore": [
+    "node_modules/**",
+    "dist/**",
+    ".terraform/**",
+    "*.tfstate",
+    "*.tfstate.backup",
+    "*.tfvars",
+    "charts/**/charts/**",
+    "charts/**/templates/**/*.tpl",
+    ".DS_Store",
+    "**/.env*",
+    "**/secrets/**"
+  ],
+  "filePatterns": {
+    "*.tf": {
+      "instructions": "This is a Terraform file for infrastructure provisioning in the homer-lab k3s cluster. Follow Terraform best practices, use modules where appropriate, and ensure resources are properly tagged. Remember this is for a local k3s cluster running on a Mac."
+    },
+    "*.tfvars.example": {
+      "instructions": "This is an example Terraform variables file. Include helpful comments for each variable."
+    },
+    "*.yaml": {
+      "instructions": "This could be a Kubernetes manifest, Helm chart value, or ArgoCD configuration. Pay attention to the directory context to determine the specific type."
+    },
+    "charts/**/*.yaml": {
+      "instructions": "This is a Helm chart configuration file. Follow Helm best practices and ensure values are properly parameterized."
+    },
+    "monitoring/**": {
+      "instructions": "This directory contains Prometheus and Grafana configurations. Ensure proper scraping configurations and dashboard definitions."
+    },
+    ".github/workflows/*.yaml": {
+      "instructions": "This is a GitHub Actions workflow file for CI/CD. Follow GitOps principles, ensuring that changes to infrastructure code trigger appropriate validation and deployment processes."
+    },
+    "argocd/**": {
+      "instructions": "This contains ArgoCD application definitions. Ensure proper sync policies and health checks are defined."
+    },
+    "*.md": {
+      "instructions": "This is documentation. Ensure it's clear, concise, and includes relevant information about the infrastructure components."
+    },
+    "nx.json": {
+      "instructions": "This is the Nx workspace configuration. Ensure proper project references and build dependencies."
+    },
+    "project.json": {
+      "instructions": "This is an Nx project configuration file. Ensure targets are properly defined for the project's needs."
+    }
+  },
+  "globalInstructions": "homer-lab is an Nx monorepo containing infrastructure-as-code for a k3s Kubernetes cluster running on a Mac on a local network. The project follows GitOps principles with GitHub Actions for CI/CD. Key technologies include: Terraform for provisioning, Helm and ArgoCD for deployments, and Prometheus/Grafana for monitoring. When suggesting code changes, prioritize security, maintainability, and adherence to infrastructure-as-code best practices. Remember this is a homelab environment, so solutions should be appropriate for a small-scale, local deployment while still following professional practices."
+}
